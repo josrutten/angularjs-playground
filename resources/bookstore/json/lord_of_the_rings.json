@@ -1,0 +1,19 @@
+{
+    "title": "Lord of the Rings", 
+    "author": "JRR Tolkien", 
+    "price": 12.95,
+    "id": "lord_of_the_rings", 
+    "adress": {
+        "straat": "PC Hoofdstraat",
+        "Huisnummer": "1"
+    },
+    "reviews": [{
+            "newspaper": "Telegraaf", 
+            "comments": "Spannend boek hoor!"
+        }, 
+        {
+            "newspaper": "NRC", 
+            "comments": "Beetje voor het gewone volk!"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "Title": "Koning van Katoren", 
+    "Author": "Jan Terlouw", 
+    "price": 18.95,
+    "id": "koning_van_katoren",
+    "critics": [{
+            "newspaper": "Trouw", 
+            "comments": "Heel politiek correct!"
+        }, 
+        {
+            "newspaper": "NRC", 
+            "comments": "Goed kinderboek!"
+        }
+    ]
+}

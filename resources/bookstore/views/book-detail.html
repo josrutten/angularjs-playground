@@ -1,0 +1,14 @@
+<h1>{{book.title}}</h1>
+
+<p>{{book.author}}</p>
+
+<ul class="Reviews">
+  <li ng-repeat="review in book.reviews">
+    <dl>
+      <dt>{{review.newspaper}}</dt>
+      <dd>{{review.comments}}</dd>
+    </dl>
+  </li>
+</ul>
+
+<p><a href="#/">Back</a></p>

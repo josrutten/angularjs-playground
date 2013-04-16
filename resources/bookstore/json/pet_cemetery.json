@@ -1,0 +1,15 @@
+{
+    "Title": "Pet Cemetery", 
+    "Author": "Stephen King", 
+    "price": 18.75,
+    "id": "pet_cemetery",
+    "critics": [{
+            "newspaper": "Newyorker", 
+            "comments": "Splended!"
+        }, 
+        {
+            "newspaper": "NRC", 
+            "comments": "Echt freaky!"
+        }
+    ]
+}

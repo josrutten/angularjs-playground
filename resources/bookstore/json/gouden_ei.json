@@ -1,0 +1,15 @@
+{
+    "Title": "Het gouden ei", 
+    "author": "Roald Dahl", 
+    "price": 14.50,
+    "id": "gouden_ei",
+    "reviews": [{
+            "newspaper": "Trouw", 
+            "comments": "Leuk voor volwassenen"
+        }, 
+        {
+            "newspaper": "Volkskrant", 
+            "comments": "Taaie kost!"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Lord of the Rings", 
+        "author": "JRR Tolkien", 
+        "price": "12.95",
+        "id": "lord_of_the_rings" 
+    }, 
+    {
+        "title": "Pet Cemetery", 
+        "author": "Stephen King", 
+        "price": "18.75",
+        "id": "pet_cemetery" 
+    },
+    {
+        "title": "Koning van Katoren", 
+        "author": "Jan Terlouw", 
+        "price": "18.95",
+        "id": "koning_van_katoren" 
+    },
+    {
+        "title": "Het gouden ei", 
+        "author": "Roald Dahl", 
+        "price": "14.50",
+        "id": "gouden_ei" 
+    }
+]
