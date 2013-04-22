@@ -19,6 +19,20 @@ function BookDetailCtrl($scope, $routeParams, bookDetailService) {
   console.log($scope.book);
 }
 
+function NewBookCtrl($scope, $http, $location, $route) {
+	$scope.book = {
+	    "title": $scope.title, 
+    	"author": $scope.autor, 
+	    "price": $scope.price,
+    	"id": ""
+	};
+	$scope.createBook = function() {
+    	$http.post('http://localhost:8888/bookstore/save',$scope.book);
+   		$location.path( "#/booklist");
+   		$routeUpdate();
+	};
+}
+
 // function BookDetailCtrl($scope, $routeParams, $http) {
 //   $http.get('json/' + $routeParams.id + '.json').success(function(data) {
 //     $scope.book = data;

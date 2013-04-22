@@ -13,8 +13,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-
 import nl.iprofs.craftamship.angularjs.businessservice.BookService;
 import nl.iprofs.craftamship.angularjs.model.Book;
 
@@ -58,7 +56,7 @@ public class BookRestService {
 	@Path("/save")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void saveBook(Book book) {
-		System.out.println("saveBook bookId=" + book.getId());
+		System.out.println("saveBook titel=" + book.getTitle());
 		bookService.saveBook(book);
 	}
 	

@@ -30,6 +30,9 @@ public class Server {
 			@Override
 			public ContainerResponse filter(final ContainerRequest request, final ContainerResponse response) {
 				response.getHttpHeaders().add("Access-Control-Allow-Origin", "*");
+				if ("OPTIONS".equals(request.getMethod())) {
+					response.getHttpHeaders().add("Access-Control-Allow-Headers", "Content-Type");
+				}
 				return response;
 			}
 		});
@@ -39,7 +42,7 @@ public class Server {
 	public static void main(String[] args) throws IOException {
 		HttpServer httpServer = startServer();
 		System.out.println(String.format("Jersey app started with WADL available at "
-								+ "%sapplication.wadl\nTry out %ssquare\nHit enter to stop it...",
+								+ "%sapplication.wadl\nTry out %s/bookstore/list/all.json\nHit enter to stop it...",
 								BASE_URI, BASE_URI));
 		System.in.read();
 		httpServer.stop();

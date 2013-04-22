@@ -1,0 +1,16 @@
+<div class="span2" ng-controller="NewBookCtrl">
+  <h4>Add a new book</h4>
+  <form name="newBook">
+      <label for="title">Title: </label>
+      <input type="text" name ="title" ng-model="book.title" required>
+
+      <label for="author">Author: </label>
+      <input type="text" name="author" ng-model="book.author"required></textarea>
+
+
+      <label for="price">Price: </label>
+      <input type="text" name="price" ng-model="book.price"required></textarea>
+
+      <button ng-click="createBook()">Save</button>
+    </form>
+</div>
