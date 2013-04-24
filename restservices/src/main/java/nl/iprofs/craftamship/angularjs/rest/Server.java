@@ -31,6 +31,7 @@ public class Server {
 			public ContainerResponse filter(final ContainerRequest request, final ContainerResponse response) {
 				response.getHttpHeaders().add("Access-Control-Allow-Origin", "*");
 				if ("OPTIONS".equals(request.getMethod())) {
+					//accept, origin
 					response.getHttpHeaders().add("Access-Control-Allow-Headers", "Content-Type");
 				}
 				return response;

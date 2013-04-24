@@ -27,9 +27,9 @@ function NewBookCtrl($scope, $http, $location, $route) {
     	"id": ""
 	};
 	$scope.createBook = function() {
-    	$http.post('http://localhost:8888/bookstore/save',$scope.book);
-   		$location.path( "#/booklist");
-   		$routeUpdate();
+    $http.post('http://localhost:8888/bookstore/save',$scope.book).success(function() {
+   	  $location.path( "#/booklist");
+    });
 	};
 }
 
