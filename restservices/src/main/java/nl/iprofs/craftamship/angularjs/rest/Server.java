@@ -2,6 +2,8 @@ package nl.iprofs.craftamship.angularjs.rest;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.ws.rs.core.UriBuilder;
 
@@ -31,12 +33,14 @@ public class Server {
 			public ContainerResponse filter(final ContainerRequest request, final ContainerResponse response) {
 				response.getHttpHeaders().add("Access-Control-Allow-Origin", "*");
 				if ("OPTIONS".equals(request.getMethod())) {
-					//accept, origin
 					response.getHttpHeaders().add("Access-Control-Allow-Headers", "Content-Type");
 				}
 				return response;
 			}
 		});
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put("JSONJAXBContext.JSON_ARRAYS", "review");
+		rc.setPropertiesAndFeatures(properties);
 		return GrizzlyServerFactory.createHttpServer(BASE_URI, rc);
 	}
 

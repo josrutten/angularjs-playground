@@ -19,8 +19,8 @@ public class BookService {
 		Book book = new Book("gouden_ei", "Het gouden ei", "Roald Dahl",
 				new BigDecimal("14.50"));
 		allBooks.put(book.getId(), book.addReview(
-				new Review("Trouw", "Leuk voor volwassenen")).addReview(
-				new Review("Volkskrant", "Taaie kost!")));
+				new Review("Trouw", "Leuk voor volwassenen"))/*.addReview(
+				new Review("Volkskrant", "Taaie kost!"))*/);
 
 		book = new Book("koning_van_katoren", "Koning van Katoren",
 				"Jan Terlouw", new BigDecimal("18.95"));

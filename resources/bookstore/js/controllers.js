@@ -4,7 +4,7 @@
 
 function BookListCtrl($scope, $http, bookDetailService) {
   $http.get('http://localhost:8888/bookstore/list/all.json').success(function(data) {
-    $scope.booklist = data.book;
+    $scope.booklist = data;
     console.log($scope.booklist);
   });
   // $scope.booklist = bookDetailService.query();
@@ -19,20 +19,6 @@ function BookDetailCtrl($scope, $routeParams, bookDetailService) {
   console.log($scope.book);
 }
 
-function NewBookCtrl($scope, $http, $location, $route) {
-	$scope.book = {
-	    "title": $scope.title, 
-    	"author": $scope.autor, 
-	    "price": $scope.price,
-    	"id": ""
-	};
-	$scope.createBook = function() {
-    $http.post('http://localhost:8888/bookstore/save',$scope.book).success(function() {
-   	  $location.path( "#/booklist");
-    });
-	};
-}
-
 // function BookDetailCtrl($scope, $routeParams, $http) {
 //   $http.get('json/' + $routeParams.id + '.json').success(function(data) {
 //     $scope.book = data;
@@ -45,3 +31,31 @@ function NewBookCtrl($scope, $http, $location, $route) {
 
 
 //PhoneDetailCtrl.$inject = ['$scope', '$routeParams', '$http'];
+
+function NewBookCtrl($scope, $http, $location, $route) {
+// $scope.book = {
+//     "title": $scope.title, 
+//    	"author": $scope.autor, 
+//     "price": $scope.price,
+//    	"id": ""
+// };
+
+	$scope.createBook = function() {
+    $http.post('http://localhost:8888/bookstore/save',$scope.book).success(function() {
+   	  $location.path( "#/booklist");
+    });
+	};
+
+  $scope.addReview = function () {
+    var newReview = {
+          newspaper: "", 
+          comments: ""
+        };
+    if ($scope.book.reviews) {
+      $scope.book.reviews.push(newReview);
+    } else {
+      $scope.book.reviews = [newReview];
+    }
+  }
+
+}

@@ -1,4 +1,4 @@
-<div class="span2" ng-controller="NewBookCtrl">
+<div class="span2">
   <h4>Add a new book</h4>
   <form name="newBook">
       <label for="title">Title: </label>
@@ -10,6 +10,24 @@
 
       <label for="price">Price: </label>
       <input type="text" name="price" ng-model="book.price"required></textarea>
+
+
+      <button ng-click="addReview()">Add review</button>
+      <ul class="Reviews">
+        <li ng-repeat="review in book.reviews">
+          <dl>
+            <dt>
+              <label for="newspaper{{$index}}">Newspaper: </label>
+              <input type="text" name="newspaper{{$index}}" ng-model="review.newspaper"required></textarea>
+            </dt>
+            <dt>
+              <label for="comments{{$index}}">Comments: </label>
+              <input type="text" name="comments{{$index}}" ng-model="review.comments"required></textarea>
+            </dt>
+          </dl>
+        </li>
+      </ul>
+
 
       <button ng-click="createBook()">Save</button>
     </form>

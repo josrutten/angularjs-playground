@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
 @XmlType(propOrder={"newspaper", "comments"})
 public class Review implements Serializable {
 
