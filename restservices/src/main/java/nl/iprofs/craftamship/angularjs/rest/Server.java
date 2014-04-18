@@ -47,17 +47,18 @@ public class Server {
 
 	public static void main(String[] args) throws IOException {
 		HttpServer httpServer = startServer();
-		System.out.println(String.format("Jersey app started with WADL available at "
+		if (args.length >= 1 && "headless".equals(args[0])) {
+			while (true) {
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException ie) {}
+			}
+		} else {
+			System.out.println(String.format("Jersey app started with WADL available at "
 								+ "%sapplication.wadl\nTry out %s/bookstore/list/all.json\nHit enter to stop it...",
 								BASE_URI, BASE_URI));
-		// System.in.read();
-		// httpServer.stop();
-		while (true) {
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException ie) {
-
-			}
+			System.in.read();
+			httpServer.stop();			
 		}
 	}
 }
