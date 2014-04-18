@@ -19,7 +19,8 @@ import com.sun.jersey.spi.container.ContainerResponseFilter;
 public class Server {
 
 	private static URI getBaseURI() {
-		return UriBuilder.fromUri("http://localhost/").port(8888).build();
+		return UriBuilder.fromUri("http://localhost/").port(
+			Integer.valueOf(System.getProperty("app.port", "8888"))).build();
 	}
 
 	public static final URI BASE_URI = getBaseURI();
