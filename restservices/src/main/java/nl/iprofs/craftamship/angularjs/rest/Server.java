@@ -47,7 +47,7 @@ public class Server {
 
 	public static void main(String[] args) throws IOException {
 		HttpServer httpServer = startServer();
-		if (args.length >= 1 && "headless".equals(args[0])) {
+		if (System.getProperty("headless","false").equals("true")) {
 			while (true) {
 				try {
 					Thread.sleep(10000);
