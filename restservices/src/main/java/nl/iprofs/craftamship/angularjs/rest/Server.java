@@ -47,6 +47,9 @@ public class Server {
 
 	public static void main(String[] args) throws IOException {
 		HttpServer httpServer = startServer();
+		System.out.println(String.format("Jersey app started with WADL available at "
+								+ "%sapplication.wadl\nTry out %s/bookstore/list/all.json",
+								BASE_URI, BASE_URI));
 		if (System.getProperty("headless","false").equals("true")) {
 			while (true) {
 				try {
@@ -54,9 +57,7 @@ public class Server {
 				} catch (InterruptedException ie) {}
 			}
 		} else {
-			System.out.println(String.format("Jersey app started with WADL available at "
-								+ "%sapplication.wadl\nTry out %s/bookstore/list/all.json\nHit enter to stop it...",
-								BASE_URI, BASE_URI));
+			System.out.println("Hit enter to stop it...");
 			System.in.read();
 			httpServer.stop();			
 		}
