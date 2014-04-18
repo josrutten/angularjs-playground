@@ -50,7 +50,14 @@ public class Server {
 		System.out.println(String.format("Jersey app started with WADL available at "
 								+ "%sapplication.wadl\nTry out %s/bookstore/list/all.json\nHit enter to stop it...",
 								BASE_URI, BASE_URI));
-		System.in.read();
-		httpServer.stop();
+		// System.in.read();
+		// httpServer.stop();
+		while (true) {
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException ie) {
+
+			}
+		}
 	}
 }
