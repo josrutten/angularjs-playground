@@ -54,6 +54,7 @@ public class Server {
 			while (true) {
 				try {
 					Thread.sleep(10000);
+					System.out.println("sleeping for 10 seconds.");
 				} catch (InterruptedException ie) {}
 			}
 		} else {
